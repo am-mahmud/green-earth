@@ -14,7 +14,7 @@
     <!-- css link -->
     <link rel="stylesheet" href="./styles/style.css">
     <!-- favicon -->
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <title>Green Earth</title>
 </head>
 
@@ -109,7 +109,7 @@
                         <h1 class="font-bold text-lg mb-3">Categories</h1>
 
                         <div id="btn-all-plant" class="mb-1 py-1 btn-cat">
-                            All Plants
+                            All Trees
                         </div>
 
                         <div id="cat-container">
@@ -137,37 +137,56 @@
             </section>
 
 
-            <section class="mt-5 md:mt-10 w-4/6 md:w-7/12 mx-auto justify-center items-center">
+            <!-- <section class="mt-5 md:mt-10 w-4/6 md:w-7/12 mx-auto justify-center items-center">
                 <h1 class="text-center font-bold text-2xl py-6 md:py-6 ">About the Campaign</h1>
                 <div class="flex flex-col md:flex-row items-center justify-center gap-10 pb-10">
                     <div>
                         <img src="./assets/about.png" alt="">
                     </div>
                     <div>
-                        <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change.
-                            Since our start, <br> we’ve planted over 500,000 trees worldwide. By joining our campaign,
-                            you help restore forests, create <br> habitats for wildlife, and combat global warming.</p>
+                        <p class="mb-4">Green Earth is a global tree plantation initiative dedicated to fighting climate change.Since
+                            our start, we’ve planted over 500,000 trees worldwide. By joining our campaign,
+                            you help restore forests, create habitats for wildlife, and combat global warming.</p>
                         <li>Restoration of natural habitats</li>
                         <li>Improvement of air quality</li>
                         <li>Support for local communities</li>
                     </div>
-                </div>
-            </section>
+                </div> -->
 
-            <!-- You can open the modal using ID.showModal() method -->
-            <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
-            <dialog id="plant_modal" class="modal">
-                <div class="modal-box">
-
-                    <form method="dialog">
-                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                    </form>
-
-                    <div id="details-container">
-
+            <section>
+                <h1 class="text-center font-bold text-2xl mt-10 mb-10">About the Campaign</h1>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-10 pb-20">
+                    <div class="w-96">
+                        <img src="./assets/about.png" alt="An illustration of people planting trees">
+                    </div>
+                    <div class="w-6/12">
+                        <p class="mb-4 text-gray-700">Green Earth is a global tree plantation initiative dedicated to
+                            fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By
+                            joining our campaign, you help restore forests, create habitats for wildlife, and combat
+                            global warming.</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            <li>Restoration of natural habitats</li>
+                            <li>Improvement of air quality</li>
+                            <li>Support for local communities</li>
+                        </ul>
                     </div>
                 </div>
-            </dialog>
+            </section>
+        </section>
+
+        <!-- Modal section (ID.showModal() method )-->
+        <dialog id="plant_modal" class="modal">
+            <div class="modal-box">
+
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+
+                <div id="details-container">
+
+                </div>
+            </div>
+        </dialog>
         </section>
 
         <!-- Cards -->

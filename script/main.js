@@ -4,6 +4,7 @@ const removeActive = () => {
     allButtons.forEach((btn) => btn.classList.remove("active"));
 };
 
+// Spinner 
 const manageSpinner = (status) => {
   if (status == true) {
     document.getElementById("spinner").classList.remove("hidden");
@@ -13,6 +14,15 @@ const manageSpinner = (status) => {
     document.getElementById("spinner").classList.add("hidden");
   }
 };
+
+// Fixed active button
+document.getElementById("btn-all-plant").classList.add("active");
+
+document.getElementById("btn-all-plant").addEventListener("click", () => {
+    removeActive();
+    document.getElementById("btn-all-plant").classList.add("active");
+    allCatPlant();
+});
 
 // Loading the categories
 const loadCategories = () =>{
@@ -294,10 +304,3 @@ function updateTotalPrice() {
 loadCategories();
 allCatPlant();
 
-document.getElementById("btn-all-plant").classList.add("active");
-
-document.getElementById("btn-all-plant").addEventListener("click", () => {
-    removeActive();
-    document.getElementById("btn-all-plant").classList.add("active");
-    allCatPlant();
-});
