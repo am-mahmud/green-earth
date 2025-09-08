@@ -1,20 +1,36 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
-
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
-
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
-
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
-
----
 # Green Earth
 
+## Question and Answer 
 
-## Private Repository: https://classroom.github.com/a/nVZrg5R9 
 
-## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
+#### 1) What is the difference between var, let, and const?
 
-## APIS
+### Answer:
+
+#### 2) What is the difference between map(), forEach(), and filter()? 
+
+### Answer:
+
+#### 3) What are arrow functions in ES6?
+
+### Answer:
+
+#### 4) How does destructuring assignment work in ES6?
+
+### Answer:
+
+#### 5) Explain template literals in ES6. How are they different from string concatenation?
+
+### Answer:
+
+
+
+
+
+
+---
+---
+### APIS
 ---
 🌴 API Endpoints
 ---
@@ -49,7 +65,6 @@ https://openapi.programming-hero.com/api/plant/1
 ```
 ---
 
-
 ## ✅ Main Requirements 
 
 #### 1) Navbar
@@ -76,20 +91,7 @@ https://openapi.programming-hero.com/api/plant/1
 
 #### 6) Responsiveness 
 - Website must be **mobile responsive**  
-
 ---
-#### 7) Create a README file to answer the following question-
-
-
-#### 1) What is the difference between var, let, and const?
-
-#### 2) What is the difference between map(), forEach(), and filter()? 
-
-#### 3) What are arrow functions in ES6?
-
-#### 4) How does destructuring assignment work in ES6?
-
-#### 5) Explain template literals in ES6. How are they different from string concatenation?
 
 ## ⚙️ Functionalities 
 
