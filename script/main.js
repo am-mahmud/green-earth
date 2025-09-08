@@ -128,13 +128,101 @@ document.getElementById("plants-container").addEventListener('click',function(e)
 
         console.log(plantName);
         console.log(plantPrice);
-        
-        
 
+        
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].name === plantName) {
+                cart[i].quantity++;
+                foundItem = true;
+                break;
+            }
+        }
+
+        if (!foundItem) {
+            cart.push({
+                name: plantName, 
+                price: plantPrice,
+                quantity: 1
+            });
+        }
+        
+        
+        fullCart();
+        updateTotalPrice();
      }
 })
 
+function fullCart() {
+    const cartContainer = document.getElementById("cart-items-container");
+    cartContainer.innerHTML = ''; 
 
+    
+    for (let i = 0; i < cart.length; i++) {
+      
+        const item = cart[i]; 
+    
+        const newCartItem = document.createElement("div");
+
+        newCartItem.innerHTML = `
+            <div class="flex justify-between">
+
+                <div>
+                <h1 class="font-medium text-sm mb-2 md:mb-0 md:text-base">${item.name}</h1>
+                <p class="text-sm md:text-base">$${item.price} <span> x </span><span id="quantity">${item.quantity}</span></p> 
+                </div>
+
+                <div>
+                    <button class="remove-btn text-red-500" data-name="${item.name}">×</button>
+                </div>
+        
+            </div>
+        `;
+
+         // Get remove button
+        const removeBtn = newCartItem.querySelector(".remove-btn");
+
+        // Store the item name directly on the button
+        removeBtn.itemName = item.name;
+
+        removeBtn.addEventListener("click", function() {
+            decreaseQuantity(this.itemName);
+        });
+
+      
+        cartContainer.appendChild(newCartItem);
+    }
+}
+
+function decreaseQuantity(itemName) {
+    let newCart = []; 
+
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].name === itemName) {
+            cart[i].quantity--;
+        }
+
+        // Only keep items with quantity > 0
+        if (cart[i].quantity > 0) {
+            newCart.push(cart[i]);
+        }
+    }
+
+    cart = newCart;
+
+    fullCart();
+    updateTotalPrice();
+}
+
+
+function updateTotalPrice() {
+    let totalPrice = 0;
+    for (let i = 0; i < cart.length; i++) {
+        const item = cart[i];
+        totalPrice += item.price * item.quantity;
+    }
+
+    document.getElementById('total-price').children[0].innerText = totalPrice.toFixed(2);
+}
 
 
 loadCategories();
