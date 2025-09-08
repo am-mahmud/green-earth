@@ -27,7 +27,6 @@ const loadCatPlant = (id) => {
     
 };
 
-
 // All plant display via API
 const displayAllPlant = (allPlants) => {
     console.log(allPlants);
@@ -57,7 +56,6 @@ const displayAllPlant = (allPlants) => {
         plantContainer.appendChild(plantCard);
     });
 };
-
 
 //Plant display based on category via API
 const displayCatPlant = (plants) => {
@@ -178,10 +176,8 @@ function fullCart() {
             </div>
         `;
 
-         // Get remove button
         const removeBtn = newCartItem.querySelector(".remove-btn");
 
-        // Store the item name directly on the button
         removeBtn.itemName = item.name;
 
         removeBtn.addEventListener("click", function() {
@@ -201,7 +197,6 @@ function decreaseQuantity(itemName) {
             cart[i].quantity--;
         }
 
-        // Only keep items with quantity > 0
         if (cart[i].quantity > 0) {
             newCart.push(cart[i]);
         }
@@ -213,7 +208,6 @@ function decreaseQuantity(itemName) {
     updateTotalPrice();
 }
 
-
 function updateTotalPrice() {
     let totalPrice = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -223,7 +217,6 @@ function updateTotalPrice() {
 
     document.getElementById('total-price').children[0].innerText = totalPrice.toFixed(2);
 }
-
 
 loadCategories();
 allCatPlant();
