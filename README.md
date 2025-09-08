@@ -156,6 +156,6 @@ Clicking a tree name on a card opens a modal with full tree details.
 
 ## 🔗 Links
 - **Live Link :** https://am-mahmud.github.io/green-earth/
-- **GitHub Private Repository:** https://github.com/am-mahmud/green-earth 
+- **GitHub Repository:** https://github.com/am-mahmud/green-earth 
 
 ---
