@@ -14,9 +14,7 @@
 
 ## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
 
-## Alternative Private Repository: https://classroom.github.com/a/JMuIYqgK 
-
-
+## APIS
 ---
 🌴 API Endpoints
 ---
@@ -50,8 +48,6 @@ https://openapi.programming-hero.com/api/plant/${id}
 https://openapi.programming-hero.com/api/plant/1
 ```
 ---
-
-
 
 
 ## ✅ Main Requirements 
@@ -153,17 +149,9 @@ Clicking a tree name on a card opens a modal with full tree details.
 
         JavaScript (Vanilla only, no frameworks)
 
-📌 Rules
-✅ At least 5 meaningful commits
 
-❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
+## 🔗 Links
 - **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
+- **GitHub Private Repository:** https://github.com/am-mahmud/green-earth 
 
 ---
