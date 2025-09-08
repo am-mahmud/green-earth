@@ -1,8 +1,8 @@
-// Useable function
-const removeActive = () =>{
-    const lessonButtons = document.querySelectorAll(".btn-cat")
-    lessonButtons.forEach((btn) => btn.classList.remove("active"))
-}
+// reuseable function
+const removeActive = () => {
+    const allButtons = document.querySelectorAll(".btn-cat");
+    allButtons.forEach((btn) => btn.classList.remove("active"));
+};
 
 // Loading the categories
 const loadCategories = () =>{
@@ -50,7 +50,7 @@ const displayAllPlant = (allPlants) => {
                 <p class="text-xl font-semibold text-gray-800">৳</span> ${plant.price}</p>
             </div>
             
-            <button class="w-full mt-4 bg-green-700 text-white font-semibold py-2 rounded-lg hover:bg-green-800">
+            <button class="w-full mt-4 bg-green-700 text-white font-semibold py-2 rounded-lg hover:bg-green-800 btn-cart">
                 Add to Cart
             </button>
         `;
@@ -80,7 +80,10 @@ const displayCatPlant = (plants) => {
                 <p class="text-xl font-semibold text-gray-800"><span>৳</span> ${plant.price}</p>
             </div>
             
-            <button class="w-full mt-4 bg-green-700 text-white font-semibold py-2 rounded-lg hover:bg-green-800">
+            <button
+                class="w-full mt-4 bg-green-700 text-white font-semibold py-2 rounded-lg hover:bg-green-800 btn-cart"
+                
+            >
                 Add to Cart
             </button>
         `;
@@ -98,7 +101,7 @@ const displayCategories = (categories) => {
      for(let category of categories){
         const btnDiv = document.createElement("div");
         btnDiv.innerHTML = `
-        <button id = "cat-btn-${category.category_name}" onclick="loadCatPlant(${category.id})" class="py-1 btn-cat">
+        <button id = "cat-btn-${category.category_name}" onclick="removeActive(); this.classList.add('active'); loadCatPlant('${category.id}')" class="py-1 btn-cat">
             ${category.category_name}
         </button>
         `;
@@ -106,9 +109,41 @@ const displayCategories = (categories) => {
     }
 }
 
+// Cart operation 
+
+let cart = [];
+
+document.getElementById("plants-container").addEventListener('click',function(e){
+     if (e.target.classList.contains('btn-cart')){
+        const addCartButton = e.target;
+        console.log("button clicked");
+        
+         const plantCard = addCartButton.closest("div");
+
+        const plantName = plantCard.querySelector("h2").innerText;
+        const plantPrice = plantCard.querySelector("p.text-xl").innerText.replace("৳", "").trim();
+
+        let quantity = 1;
+        let foundItem = false;
+
+        console.log(plantName);
+        console.log(plantPrice);
+        
+        
+
+     }
+})
+
+
+
+
 loadCategories();
 allCatPlant();
 
+document.getElementById("btn-all-plant").classList.add("active");
+
 document.getElementById("btn-all-plant").addEventListener("click", () => {
+    removeActive();
+    document.getElementById("btn-all-plant").classList.add("active");
     allCatPlant();
 });
