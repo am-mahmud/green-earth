@@ -149,17 +149,6 @@ console.log(plantDetail);
 
 };
 
-
-// "plants": {
-
-//    "name": "Mango Tree",
-//     "image": "https://i.ibb.co.com/cSQdg7tf/mango-min.jpg",
-//     "category": "Fruit Tree",
-//      "price": 500
-
-   
-// description": "A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green canopy offers shade, while its sweet fruits are rich in vitamins and minerals.",
-    
    
 const displayPlantDetails = (plantDetails) => {
     // console.log(plantDetails);
