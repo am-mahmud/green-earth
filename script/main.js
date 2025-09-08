@@ -4,6 +4,16 @@ const removeActive = () => {
     allButtons.forEach((btn) => btn.classList.remove("active"));
 };
 
+const manageSpinner = (status) => {
+  if (status == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("plants-container").classList.add("hidden");
+  } else {
+    document.getElementById("plants-container").classList.remove("hidden");
+    document.getElementById("spinner").classList.add("hidden");
+  }
+};
+
 // Loading the categories
 const loadCategories = () =>{
     fetch ("https://openapi.programming-hero.com/api/categories")
@@ -13,6 +23,8 @@ const loadCategories = () =>{
 
 //Loading All plants
 const allCatPlant = (id) => {
+    // Spinner Added 
+    manageSpinner(true);
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((json) => displayAllPlant(json.plants))
@@ -21,6 +33,8 @@ const allCatPlant = (id) => {
 
 // Loading Plants based on categories
 const loadCatPlant = (id) => {
+    // Spinner added
+     manageSpinner(true);
   fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then((res) => res.json())
     .then((json) => displayCatPlant(json.plants))
@@ -55,6 +69,7 @@ const displayAllPlant = (allPlants) => {
         `;
         plantContainer.appendChild(plantCard);
     });
+    manageSpinner(false);
 };
 
 //Plant display based on category via API
@@ -86,6 +101,7 @@ const displayCatPlant = (plants) => {
         `;
         plantContainer.appendChild(plantCard);
     });
+    manageSpinner(false);
 };
 
 // All categories display via API
