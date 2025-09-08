@@ -62,9 +62,9 @@ const displayAllPlant = (allPlants) => {
         const plantCard = document.createElement("div");
         plantCard.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'flex', 'flex-col');
         plantCard.innerHTML = `
-            <img id="${plant.id}" src="${plant.image}" alt="" class="h-48 w-full object-cover rounded-lg mb-4 plant-img">
+            <img src="${plant.image}" alt="" class="h-48 w-full object-cover rounded-lg mb-4 plant-img">
             
-            <h2 class="text-lg font-bold mb-2">${plant.name}</h2>
+            <h2 id="${plant.id}" class="text-lg font-bold mb-2 plant-name">${plant.name}</h2>
             
             <p class="text-sm text-gray-600 mb-4">${plant.description}</p>
             
@@ -92,8 +92,9 @@ const displayCatPlant = (plants) => {
         const plantCard = document.createElement("div");
         plantCard.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'flex', 'flex-col'); 
         plantCard.innerHTML = `
-            <img id="${plant.id}" src="${plant.image}" alt="" class="h-48 w-full object-cover rounded-lg mb-4 plant-img">
-            <h2 class="text-lg font-bold mb-2">${plant.name}</h2>
+            <img src="${plant.image}" alt="" class="h-48 w-full object-cover rounded-lg mb-4 plant-img">
+
+            <h2 id="${plant.id}" class="text-lg font-bold mb-2 plant-name">${plant.name}</h2>
             
             <p class="text-sm text-gray-600 mb-4">${plant.description}</p>
             
@@ -179,11 +180,11 @@ const displayPlantDetails = (plantDetails) => {
 
 // Modal show
 document.getElementById("plants-container").addEventListener('click',function(e){
-    if (e.target.classList.contains('plant-img')){
-        const addCartButton = e.target;
-        console.log(addCartButton);
+    if (e.target.classList.contains('plant-name')){
+        const modalButton = e.target;
+        console.log(modalButton);
         
-        console.log("img clicked");
+        console.log("name clicked");
 
         loadPlantDetail(e.target.id)
     }
