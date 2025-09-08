@@ -38,7 +38,7 @@ const displayAllPlant = (allPlants) => {
         const plantCard = document.createElement("div");
         plantCard.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'flex', 'flex-col');
         plantCard.innerHTML = `
-            <img src="${plant.image}" alt="" class="h-48 w-full object-cover rounded-lg mb-4">
+            <img id="${plant.id}" src="${plant.image}" alt="" class="h-48 w-full object-cover rounded-lg mb-4 plant-img">
             
             <h2 class="text-lg font-bold mb-2">${plant.name}</h2>
             
@@ -67,8 +67,7 @@ const displayCatPlant = (plants) => {
         const plantCard = document.createElement("div");
         plantCard.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'flex', 'flex-col'); 
         plantCard.innerHTML = `
-            <img src="${plant.image}" alt="" class="h-48 w-full object-cover rounded-lg mb-4">
-            
+            <img id="${plant.id}" src="${plant.image}" alt="" class="h-48 w-full object-cover rounded-lg mb-4 plant-img">
             <h2 class="text-lg font-bold mb-2">${plant.name}</h2>
             
             <p class="text-sm text-gray-600 mb-4">${plant.description}</p>
@@ -107,8 +106,66 @@ const displayCategories = (categories) => {
     }
 }
 
-// Cart operation 
 
+// Loading Plants details
+const loadPlantDetail = async (id) => {
+  const detailUrl = `https://openapi.programming-hero.com/api/plant/${id}`;
+  
+  console.log(detailUrl);
+  
+  const res = await fetch(detailUrl);
+  const plantDetail = await res.json();
+
+displayPlantDetails(plantDetail.plants); 
+
+console.log(plantDetail);
+
+};
+
+
+// "plants": {
+
+//    "name": "Mango Tree",
+//     "image": "https://i.ibb.co.com/cSQdg7tf/mango-min.jpg",
+//     "category": "Fruit Tree",
+//      "price": 500
+
+   
+// description": "A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green canopy offers shade, while its sweet fruits are rich in vitamins and minerals.",
+    
+   
+const displayPlantDetails = (plantDetails) => {
+    // console.log(plantDetails);
+
+    const detailsBox = document.getElementById("details-container")
+    detailsBox.innerHTML = `
+        <div>
+        <h1 class="font-bold text-lg mb-2">${plantDetails.name} </h1>
+        <img src="${plantDetails.image}" alt="" srcset="" class="h-48 w-full object-cover rounded-lg mb-2">
+        <p class="mb-2"><span class="font-bold">Category : </span>${plantDetails.category}</p>
+        <p class="mb-2"><span class="font-bold">Price : </span><span>৳</span> ${plantDetails.price}</p>
+        <p><span class="font-bold">Description :</span> <span>${plantDetails.description}</span> </p>
+        </div>
+    `
+    document.getElementById("plant_modal").showModal();
+    
+}
+
+// Modal show
+document.getElementById("plants-container").addEventListener('click',function(e){
+    if (e.target.classList.contains('plant-img')){
+        const addCartButton = e.target;
+        console.log(addCartButton);
+        
+        console.log("img clicked");
+
+        loadPlantDetail(e.target.id)
+    }
+})
+    
+
+
+// Cart operation 
 let cart = [];
 
 document.getElementById("plants-container").addEventListener('click',function(e){
