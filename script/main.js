@@ -162,7 +162,7 @@ function fullCart() {
         const newCartItem = document.createElement("div");
 
         newCartItem.innerHTML = `
-            <div class="flex justify-between">
+            <div class="flex justify-between bg-[#f0fdf4] p-2 rounded-lg mb-2">
 
                 <div>
                 <h1 class="font-medium text-sm mb-2 md:mb-0 md:text-base">${item.name}</h1>
@@ -170,7 +170,7 @@ function fullCart() {
                 </div>
 
                 <div>
-                    <button class="remove-btn text-red-500" data-name="${item.name}">×</button>
+                    <button class="remove-btn text-red-500 text-xl" data-name="${item.name}">×</button>
                 </div>
         
             </div>
